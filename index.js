@@ -7,10 +7,11 @@ const authRoute = require("./routes/auth");
 
 dotenv.config();
 
+// Then is for successful connection and catch is for any errors that might occur.
 mongoose
     .connect(process.env.MONGO_URL)
-    .then(() => console.log("Connection Established"))
-    .catch(() => console.log("Connection Failed"));
+    .then(() => console.log("DB Connected"))
+    .catch((err) => console.log(err));
 
 app.use(express.json());
 app.use("/api/auth", authRoute);
