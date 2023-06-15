@@ -84,6 +84,7 @@ router.get("/stats", verifyTokenAndAdmin, async (req,res) => {
                 }
             }
         ]);
+        // the above try block will only display the "group" i.e. only the month and no of users created in that month.
 
         res.status(200).json(data);
 
